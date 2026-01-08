@@ -1,0 +1,118 @@
+<!-- Sidebar -->
+    <section id="sidebar">
+
+        <!-- Intro -->
+            <section id="intro">
+                <a href="#" class="logo"><img src="{{ asset('images/logo.png') }}" alt="" /></a>
+                <header>
+                    <!-- <h2>Logo</h2> -->
+                    <p>{{__('context.about_description')}}</p>
+                </header>
+            </section>
+
+        <!-- Mini Posts -->
+            <section>
+                <div class="mini-posts">
+                    @for ($i = 0; $i<$length; $i++)
+                        <!-- Mini Post -->
+                            <article class="mini-post">
+                                <header>
+                                    <h3><a href="{{ route('design.context', ['id' => $i]) }}">{{__('designs.title_'.$i)}}</a></h3>
+                                </header>
+                                <a href="{{ route('design.context', ['id' => $i]) }}" class="image"><img src="{{ asset('images/designs/design_'. $i .'.png') }}" alt="" /></a>
+                            </article>
+                    @endfor
+
+                </div>
+            </section>
+
+        <!-- Posts List -->
+            <section>
+                <ul class="posts">
+                    @for ($i = 0; $i<$length; $i++)
+                        <li>
+                            <article>
+                                <header>
+                                    <h3><a href="{{ route('design.context', ['id' => $i]) }}">{{__('designs.title_'.$i)}}</a></h3>
+                                </header>
+                                <a href="{{ route('design.context', ['id' => $i]) }}" class="image"><img src="{{ asset('images/designs/design_'. $i .'.png') }}" alt="" /></a>
+                            </article>
+                        </li>
+                    @endfor
+                </ul>
+            </section>
+
+        <!-- About -->
+            <section class="blurb" id="about" >
+                <h2>{{__('context.about')}}</h2>
+                <pre class="hidden-context"> {{__('context.about_context')}}</pre>
+                <ul class="actions">
+                    <li><a class="button" id="about-context-btn">{{__('context.okay')}}</a></li>
+                </ul>
+            </section>
+
+        <!-- Footer -->
+            <footer id="footer">
+                <ul class="icons">
+
+                    <!-- Twitter (X) -->
+                    <li>
+                        <a href="https://x.com" data-tooltip="X">
+                            <svg class="styled-svg svg-fill" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M19.83 8.00001C19.83 8.17001 19.83 8.35001 19.83 8.52001C19.8393 10.0302 19.5487 11.5272 18.9751 12.9242C18.4014 14.3212 17.5562 15.5904 16.4883 16.6583C15.4204 17.7262 14.1512 18.5714 12.7542 19.1451C11.3572 19.7187 9.86017 20.0093 8.34999 20C6.15213 20.0064 3.9992 19.3779 2.14999 18.19C2.47999 18.19 2.78999 18.19 3.14999 18.19C4.96345 18.19 6.72433 17.5808 8.14999 16.46C7.30493 16.4524 6.48397 16.1774 5.80489 15.6744C5.12581 15.1714 4.62349 14.4662 4.36999 13.66C4.62464 13.7006 4.88213 13.7207 5.13999 13.72C5.49714 13.7174 5.85281 13.6738 6.19999 13.59C5.2965 13.4056 4.48448 12.9147 3.90135 12.2003C3.31822 11.486 2.99981 10.5921 2.99999 9.67001C3.55908 9.97841 4.18206 10.153 4.81999 10.18C4.25711 9.80767 3.79593 9.30089 3.47815 8.7055C3.16038 8.11011 2.99604 7.44489 2.99999 6.77001C3.00124 6.06749 3.18749 5.37769 3.53999 4.77001C4.55172 6.01766 5.81423 7.03889 7.24575 7.76757C8.67727 8.49625 10.2459 8.91613 11.85 9.00001C11.7865 8.69737 11.753 8.38922 11.75 8.08001C11.7239 7.25689 11.9526 6.44578 12.4047 5.75746C12.8569 5.06913 13.5104 4.53714 14.2762 4.23411C15.0419 3.93109 15.8826 3.87181 16.6833 4.06437C17.484 4.25693 18.2057 4.69195 18.75 5.31001C19.655 5.12822 20.5214 4.78981 21.31 4.31001C21.0088 5.24317 20.3754 6.0332 19.53 6.53001C20.3337 6.44316 21.1194 6.23408 21.86 5.91001C21.3116 6.71097 20.6361 7.41694 19.86 8.00001H19.83Z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+
+                    <!-- Facebook -->
+                    <li>
+                        <a href="https://www.facebook.com" data-tooltip="Facebook">
+                            <svg class="styled-svg svg-fill" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M14 9.296V7.152c0-.629.416-.776.712-.776h1.22V3H14.21c-2.152 0-2.639 1.611-2.639 2.639v3.657H10V12h1.571v9h3.428v-9h2.315l.343-2.704H14z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+
+                    <!-- Instagram -->
+                    <li>
+                        <a href="https://www.instagram.com" data-tooltip="Instagram">
+                            <svg class="styled-svg svg-fill" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M12 16a4 4 0 100-8 4 4 0 000 8zm0-6.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5z"></path>
+                                    <path d="M17.333 4H6.667A2.667 2.667 0 004 6.667v10.666A2.667 2.667 0 006.667 20h10.666A2.667 2.667 0 0020 17.333V6.667A2.667 2.667 0 0017.333 4zM18.5 17.333a1.167 1.167 0 01-1.167 1.167H6.667a1.167 1.167 0 01-1.167-1.167V6.667a1.167 1.167 0 011.167-1.167h10.666a1.167 1.167 0 011.167 1.167v10.666z"></path>
+                                    <circle cx="16.5" cy="7.5" r="1"></circle>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+
+                    <!-- Email -->
+                    <li>
+                        <a id="get-email" data-tooltip="<?=$email?>">
+                            <svg class="styled-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M4 7.00005L10.2426 12.2022C11.2426 13.0355 12.7574 13.0355 13.7574 12.2022L20 7.00005M5 18H19C20.1046 18 21 17.1046 21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <div class="copyright">
+                    &copy; <?=$title?>
+                </div>
+            </footer>
+        </section>
+
+    </section>

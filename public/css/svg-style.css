@@ -1,0 +1,74 @@
+/* Container for the menu item */
+li.menu {
+    list-style: none;
+    width: 5em;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The SVG itself */
+
+.styled-svg-menu {
+    width: 1.7rem;
+    height: 1.7rem;
+    cursor: pointer;
+    stroke: var(--text-second);
+}
+
+.styled-svg-menu:hover {
+    cursor: pointer;
+    stroke: #3B82F6;
+}
+
+.styled-svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    stroke: var(--text-second);
+}
+
+
+/* Hover Effect */
+.styled-svg:hover {
+    cursor: pointer;
+    stroke: var(--accent-cyan);
+    transform: scale(1.05);
+}
+
+.svg-fill {
+    fill: var(--text-second);
+    transition: stroke 0.3s ease, transform 0.2s ease;
+}
+
+.svg-fill:hover {
+    fill: var(--accent-cyan);
+    transition: fill var(--transition-speed) ease;
+}
+
+/* Data tooltip content (hidden by default) */
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translateX(-50%);
+  display: none;
+  padding: .2em .5em;
+  font-family: "Raleway", Helvetica, sans-serif;
+  background-color: var(--bg-second);
+  color: var(--text-main);
+  font-size: 1rem;
+  border-radius: .3rem;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+[data-tooltip]:hover::after {
+  display: block;
+}
