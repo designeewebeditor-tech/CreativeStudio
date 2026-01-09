@@ -29,11 +29,15 @@ RUN composer install --no-dev --optimize-autoloader
 # Laravel permissions
 RUN chown -R www-data:www-data storage bootstrap/cache
 
-# Set Apache document root to /public
+# Set Apache document root
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
+
 RUN sed -ri 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' \
     /etc/apache2/sites-available/*.conf \
     /etc/apache2/apache2.conf
+
+# 🔥 CRITICAL FIX: Allow .htaccess
+RUN sed -ri 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 
 # Bind Apache to Render PORT
 ENV PORT=10000
