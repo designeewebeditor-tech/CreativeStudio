@@ -25,19 +25,19 @@
             'description_3'=>'Sky Axis is a high-rise architectural concept designed as a defining vertical landmark within the urban landscape. Rising along a central axis, the project symbolises progress, connectivity, and ambition. With its elegant proportions and strategic placement along the waterfront, Sky Axis is ideal for mixed-use developments, financial districts, or signature city skylines that demand innovation, prestige, and forward-thinking design.',
 
             /* Design 5 **/
-            'title_4'=>'',
-            'header_4'=>'',
-            'description_4'=>'',
+            'title_4'=>'Urban Pulse',
+            'header_4'=>'A Contemporary Architectural Identity for Modern Business',
+            'description_4'=>'Urban Pulse is a contemporary architectural concept designed to reflect innovation, transparency, and corporate confidence. With its smooth, fluid facade and carefully balanced geometry, the building establishes a strong presence within the urban environment. Integrated greenery, natural light, and modern materials create a welcoming yet professional atmosphere, making the design ideal for corporate headquarters, financial institutions, or forward-thinking commercial spaces. Urban Pulse represents architecture that is both functional and expressive — shaping trust through design.',
 
             /* Design 6 **/
-            'title_5'=>'',
-            'header_5'=>'',
-            'description_5'=>'',
+            'title_5'=>'Coastal Nexus',
+            'header_5'=>'A Visionary Waterfront Urban Ecosystem',
+            'description_5'=>'Coastal Nexus is a large-scale waterfront development designed as a connected urban ecosystem where architecture, landscape, and water coexist in harmony. The project combines residential towers, hospitality zones, public spaces, and cultural elements into a cohesive master plan. Fluid building forms, green corridors, and open waterfront promenades create a balanced environment that supports modern living, leisure, and social interaction. Coastal Nexus represents a new generation of coastal cities — sustainable, human-centered, and globally inspired.',
 
             /* Design 7 **/
-            'title_6'=>'',
-            'header_6'=>'',
-            'description_6'=>'',
+            'title_6'=>'Future Axis',
+            'header_6'=>'A Futuristic Architectural Concept for Innovation and Research',
+            'description_6'=>'Future Axis is a visionary architectural concept designed to symbolize progress, knowledge, and technological advancement. Defined by bold vertical elements, curved glass volumes, and a dynamic central axis, the building creates a powerful visual identity while maintaining functional clarity. The composition supports flexible internal spaces suitable for research centers, innovation hubs, educational institutions, or technology-driven organizations. Future Axis represents architecture as a driver of discovery — where form, function, and forward thinking converge.',
 
             /* Design 8 **/
             'title_7'=>'',
@@ -53,6 +53,31 @@
             'title_9'=>'',
             'header_9'=>'',
             'description_9'=>'',
+
+            /* Design 11 **/
+            'title_11'=>'',
+            'header_11'=>'',
+            'description_11'=>'',
+
+            /* Design 13 **/
+            'title_12'=>'',
+            'header_12'=>'',
+            'description_12'=>'',
+
+            /* Design 14 **/
+            'title_13'=>'',
+            'header_13'=>'',
+            'description_13'=>'',
+
+            /* Design 15 **/
+            'title_14'=>'',
+            'header_14'=>'',
+            'description_14'=>'',
+
+            /* Design 16 **/
+            'title_15'=>'',
+            'header_15'=>'',
+            'description_15'=>'',
 
     ];
 

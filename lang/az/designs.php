@@ -30,19 +30,19 @@
             'description_4'=>'',
 
             /* Design 6 **/
-            'title_5'=>'',
-            'header_5'=>'',
-            'description_5'=>'',
+            'title_5'=>'Urban Pulse',
+            'header_5'=>'Müasir Biznes üçün Memarlıq Kimliyi',
+            'description_5'=>'Urban Pulse innovasiya, şəffaflıq və korporativ etibarı əks etdirmək üçün hazırlanmış müasir memarlıq konseptidir. Axıcı fasad forması və balanslaşdırılmış həndəsi quruluş binaya şəhər mühitində güclü vizual mövqe qazandırır. Yaşıllıq elementləri, təbii işıq və müasir materialların inteqrasiyası professional və eyni zamanda cəlbedici atmosfer yaradır. Bu konsept baş ofislər, maliyyə qurumları və gələcəyə yönəlmiş kommersiya məkanları üçün ideal həlldir.',
 
             /* Design 7 **/
-            'title_6'=>'',
-            'header_6'=>'',
-            'description_6'=>'',
+            'title_6'=>'Coastal Nexus',
+            'header_6'=>'Vizyoner Sahilyanı Şəhər Ekosistemi',
+            'description_6'=>'Coastal Nexus memarlıq, landşaft və su elementlərinin harmonik şəkildə birləşdiyi genişmiqyaslı sahilyanı inkişaf layihəsidir. Layihə yaşayış binalarını, mehmanxana zonalarını, ictimai məkanları və mədəni obyektləri vahid master-plan çərçivəsində bir araya gətirir. Axıcı bina formaları, yaşıl dəhlizlər və açıq sahil gəzinti zonaları müasir yaşayış və sosial əlaqələr üçün balanslı mühit yaradır. Coastal Nexus sahilyanı şəhərlərin yeni nəsil modelini təmsil edir.',
 
             /* Design 8 **/
-            'title_7'=>'',
-            'header_7'=>'',
-            'description_7'=>'',
+            'title_7'=>'Future Axis',
+            'header_7'=>'İnnovasiya və Tədqiqat üçün Futuristik Memarlıq Konsepti',
+            'description_7'=>'Future Axis inkişafı, biliyi və texnoloji irəliləyişi simvolizə edən futuristik memarlıq konseptidir. Güclü şaquli elementlər, əyri şüşə həcmlər və dinamik mərkəzi ox binaya həm vizual güc, həm də funksional aydınlıq qazandırır. Daxili məkanlar tədqiqat mərkəzləri, innovasiya platformaları, təhsil və texnologiya yönümlü qurumlar üçün çevik şəkildə planlaşdırılmışdır. Future Axis gələcəyə yönəlmiş düşüncənin memarlıq ifadəsidir.',
 
             /* Design 9 **/
             'title_8'=>'',
@@ -53,6 +53,31 @@
             'title_9'=>'',
             'header_9'=>'',
             'description_9'=>'',
+
+            /* Design 11 **/
+            'title_11'=>'',
+            'header_11'=>'',
+            'description_11'=>'',
+
+            /* Design 13 **/
+            'title_12'=>'',
+            'header_12'=>'',
+            'description_12'=>'',
+
+            /* Design 14 **/
+            'title_13'=>'',
+            'header_13'=>'',
+            'description_13'=>'',
+
+            /* Design 15 **/
+            'title_14'=>'',
+            'header_14'=>'',
+            'description_14'=>'',
+
+            /* Design 16 **/
+            'title_15'=>'',
+            'header_15'=>'',
+            'description_15'=>'',
 
     ];
 

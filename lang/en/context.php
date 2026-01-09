@@ -18,7 +18,7 @@
         Driven by a global mindset, we develop visionary projects ranging from iconic landmarks and waterfront developments to smart urban systems and vertical city solutions. Each design is guided by strong conceptual thinking, sustainability principles, and an understanding of how spaces influence movement, connection, and experience.
 
         We believe architecture should do more than exist — it should inspire, connect, and define the future.',
-        
+
         'about_description'=>'A global design studio specialising in futuristic architecture, urban concepts, and landmark developments. We create visionary designs that combine innovation, sustainability, and strong visual identity.',
 
         /* Error page **/
@@ -38,7 +38,7 @@
         /* Buttons **/
         'learn' =>'Learn More',
         'okay'=>'Okay',
-        'copy'=>'Email copied',
+        'copy'=>'Copied',
         'go_home'=>'Go to home page',
         'go_back'=>'Go back',
         'continue'=>'Continue Reading',

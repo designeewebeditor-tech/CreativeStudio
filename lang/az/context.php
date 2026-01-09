@@ -38,7 +38,7 @@
         /* Buttons **/
         'learn' =>'Ətraflı məlumat',
         'okay'=>'Oldu',
-        'copy'=>'E-poçt kopyalandı',
+        'copy'=>'Kopyalandı',
         'go_home'=>'Ana səhifəyə keçin',
         'go_back'=>'Geri qayıt',
         'continue'=>'Davam etmək',

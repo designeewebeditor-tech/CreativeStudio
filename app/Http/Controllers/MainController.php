@@ -14,15 +14,17 @@ class MainController extends Controller
 
     private $company_eamil = "someone@example.com";
 
+    private $company_phone = "+0000000";
+
     private $lang = ['en', 'ru', 'az'];
 
-    private $length = 4;
+    private $length = 7;
 
     public function designs(): View
     {
         !session()->has('lang') ? session()->put('lang', $this->lang[0]) : null;
         App::setLocale(session('lang'));
-        return view('index', ["show" => false, "error" => false, "length" => $this->length, "title" => $this->company_title, "email" => $this->company_eamil,]);
+        return view('index', ["show" => false, "error" => false, "length" => $this->length, "title" => $this->company_title, "phone"=>$this->company_phone, "email" => $this->company_eamil,]);
     }
 
     public function design(int $id) : View
@@ -31,29 +33,29 @@ class MainController extends Controller
 
         !session()->has('lang') ? session()->put('lang', $this->lang[0]) : null;
         App::setLocale(session('lang'));
-        return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->company_title, "email" => $this->company_eamil, "id" => $id, "image" =>$imageCount]);
+        return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->company_title, "phone"=>$this->company_phone, "email" => $this->company_eamil, "id" => $id, "image" =>$imageCount]);
     }
 
     public function designsLang(Request $request): View
     {
         session()->put('lang', $request->lang);
         App::setLocale(session('lang'));
-        return view('index', ["show" => false, "error" => false, "length" => $this->length, "title" => $this->company_title, "email" => $this->company_eamil,]);
+        return view('index', ["show" => false, "error" => false, "length" => $this->length, "title" => $this->company_title, "phone"=>$this->company_phone, "email" => $this->company_eamil,]);
     }
 
     public function designLang(int $id, Request $request) : View
     {
         $imageCount = count(File::glob(public_path("images/designs/design_{$id}_*.png")));
-        
+
         session()->put('lang', $request->lang);
         App::setLocale(session('lang'));
-        return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->company_title, "email" => $this->company_eamil, "id" => $id, "image" =>$imageCount]);
+        return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->company_title, "phone"=>$this->company_phone, "email" => $this->company_eamil, "id" => $id, "image" =>$imageCount]);
     }
 
     public function errorPage(): View
     {
         !session()->has('lang') ? session()->put('lang', $this->lang[0]) : null;
         App::setLocale(session('lang'));
-        return view('index', ["show" => false, "error" => true, "length" => $this->length, "title" => $this->company_title, "email" => $this->company_eamil,]);
+        return view('index', ["show" => false, "error" => true, "length" => $this->length, "title" => $this->company_title, "phone"=>$this->company_phone, "email" => $this->company_eamil,]);
     }
 }

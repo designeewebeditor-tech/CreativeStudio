@@ -1775,12 +1775,8 @@ input, select, textarea {
 /* Blurb */
 
 	.blurb h2 {
-		font-size: 0.8em;
+		font-size: 1.2em;
 		margin: 0 0 1.5em 0;
-	}
-
-	.blurb h3 {
-		font-size: 0.7em;
 	}
 
     .blurb pre{
@@ -3219,6 +3215,11 @@ input, select, textarea {
 		letter-spacing: 0.25em;
 		text-transform: uppercase;
 	}
+
+    #footer h2{
+        font-size: 1.2em;
+		margin: 0 0 1.5em 0;
+    }
 
 	body.single #footer {
 		text-align: center;
