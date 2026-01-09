@@ -43,9 +43,11 @@ class MainController extends Controller
 
     public function designLang(int $id, Request $request) : View
     {
+        $imageCount = count(File::glob(public_path("images/designs/design_{$id}_*.png")));
+        
         session()->put('lang', $request->lang);
         App::setLocale(session('lang'));
-        return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->company_title, "email" => $this->company_eamil, "id" => $id]);
+        return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->company_title, "email" => $this->company_eamil, "id" => $id, "image" =>$imageCount]);
     }
 
     public function errorPage(): View
