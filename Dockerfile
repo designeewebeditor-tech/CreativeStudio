@@ -3,7 +3,7 @@ FROM php:8.2-apache
 # Enable Apache rewrite
 RUN a2enmod rewrite
 
-# Install system dependencies
+# Install system dependencies (NO database libs)
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
@@ -13,14 +13,14 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     zip \
     curl \
-    && docker-php-ext-install pdo pdo_mysql mbstring zip
+    && docker-php-ext-install mbstring zip
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-# Copy app
+# Copy app files
 COPY . .
 
 # Install PHP dependencies
@@ -29,12 +29,16 @@ RUN composer install --no-dev --optimize-autoloader
 # Laravel permissions
 RUN chown -R www-data:www-data storage bootstrap/cache
 
-# Set Laravel public directory
+# Set Apache document root to /public
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
-RUN sed -ri 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' \
+    /etc/apache2/sites-available/*.conf \
+    /etc/apache2/apache2.conf
 
-# 🔴 CRITICAL: Bind Apache to Render PORT
+# Bind Apache to Render PORT
 ENV PORT=10000
-RUN sed -ri "s/80/\${PORT}/g" /etc/apache2/ports.conf /etc/apache2/sites-available/*.conf
+RUN sed -ri "s/80/\${PORT}/g" \
+    /etc/apache2/ports.conf \
+    /etc/apache2/sites-available/*.conf
 
 EXPOSE 10000
