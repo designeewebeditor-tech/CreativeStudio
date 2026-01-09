@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\File;
 
 class MainController extends Controller
 {
@@ -17,29 +18,6 @@ class MainController extends Controller
 
     private $length = 4;
 
-    // private $length = [
-    //     [
-    //         "title" => "Magna sed adipiscing",
-    //         "header" => "Magna sed adipiscing",
-    //         "context" => "Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.",
-    //     ],
-    //     [
-    //         "title" => "Ultricies sed magna euismod",
-    //         "header" => "Ultricies sed magna euismod enim vitae gravida",
-    //         "context" => "Lorem ipsum dolor amet nullam consequat etiam feugiat",
-    //     ],
-    //     [
-    //         "title" => "Euismod et accumsan",
-    //         "header" => "Euismod et accumsan",
-    //         "context" => "Lorem ipsum dolor amet nullam consequat etiam feugiat",
-    //     ],
-    //     [
-    //         "title" => "Elements",
-    //         "header" => "Elements",
-    //         "context" => "Lorem ipsum dolor amet nullam consequat etiam feugiat",
-    //     ],
-    // ];
-
     public function designs(): View
     {
         !session()->has('lang') ? session()->put('lang', $this->lang[0]) : null;
@@ -49,9 +27,11 @@ class MainController extends Controller
 
     public function design(int $id) : View
     {
+        $imageCount = count(File::glob(public_path("images/designs/design_{$id}_*.png")));
+
         !session()->has('lang') ? session()->put('lang', $this->lang[0]) : null;
         App::setLocale(session('lang'));
-        return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->company_title, "email" => $this->company_eamil, "id" => $id]);
+        return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->company_title, "email" => $this->company_eamil, "id" => $id, "image" =>$imageCount]);
     }
 
     public function designsLang(Request $request): View
