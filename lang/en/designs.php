@@ -40,44 +40,49 @@
             'description_6'=>'Future Axis is a visionary architectural concept designed to symbolize progress, knowledge, and technological advancement. Defined by bold vertical elements, curved glass volumes, and a dynamic central axis, the building creates a powerful visual identity while maintaining functional clarity. The composition supports flexible internal spaces suitable for research centers, innovation hubs, educational institutions, or technology-driven organizations. Future Axis represents architecture as a driver of discovery — where form, function, and forward thinking converge.',
 
             /* Design 8 **/
-            'title_7'=>'',
-            'header_7'=>'',
-            'description_7'=>'',
+            'title_7'=>'Modern Haven',
+            'header_7'=>'A Contemporary Private Residence Defined by Balance and Clarity',
+            'description_7'=>'Modern Haven is a contemporary residential design focused on simplicity, comfort, and functional elegance. Clean horizontal lines, contrasting materials, and large glazed surfaces create a strong yet calm architectural expression. The layout is designed to maximize natural light, privacy, and connection with the surrounding landscape, making the residence ideal for modern family living. Modern Haven reflects refined minimalism combined with everyday practicality.',
 
             /* Design 9 **/
-            'title_8'=>'',
-            'header_8'=>'',
-            'description_8'=>'',
+            'title_8'=>'Aqua Link',
+            'header_8'=>'An Innovative Floating Development Connecting Architecture and Water',
+            'description_8'=>'Aqua Link is a futuristic waterfront concept designed as a network of interconnected structures above water. The project combines hospitality, leisure, and public functions into a single floating system, linked by elegant bridges and fluid forms. Emphasizing sustainability, innovation, and unique user experience, Aqua Link redefines how architecture can interact with marine environments while creating an iconic destination.',
 
             /* Design 10 **/
-            'title_9'=>'',
-            'header_9'=>'',
-            'description_9'=>'',
+            'title_9'=>'Sky Crest',
+            'header_9'=>'An Iconic Vertical Landmark for Luxury and Hospitality',
+            'description_9'=>'Sky Crest is a bold high-rise concept designed as a vertical symbol of prestige and modern luxury. The tower’s aerodynamic form and sculpted façade create a striking skyline presence while optimizing views and daylight. Ideal for hotels, mixed-use developments, or landmark projects, Sky Crest combines elegance, innovation, and iconic identity in a single architectural statement.',
 
             /* Design 11 **/
-            'title_11'=>'',
-            'header_11'=>'',
-            'description_11'=>'',
+            'title_10'=>'Ocean Axis',
+            'header_10'=>'A Symbolic Floating Landmark at the Center of Innovation',
+            'description_10'=>'Ocean Axis is a futuristic floating architectural concept designed as a central node above water. The symmetrical composition, vertical towers, and radial connections create a strong symbolic presence, representing balance, technology, and global connectivity. Intended for landmark developments, research facilities, or visionary marine projects, Ocean Axis explores how architecture can exist independently of land while remaining visually iconic and functionally integrated.',
+
+            /* Design 12 **/
+            'title_11'=>'Green Habitat',
+            'header_11'=>'A Sustainable Residential Concept Built Around Community',
+            'description_11'=>'Green Habitat is a modular residential concept designed to support sustainable living and strong community interaction. The clustered layout allows each unit to maintain privacy while remaining visually and functionally connected. Integrated green spaces, compact planning, and adaptable structures make the project suitable for eco-residential developments, suburban housing, or experimental urban neighborhoods focused on environmental responsibility.',
 
             /* Design 13 **/
-            'title_12'=>'',
-            'header_12'=>'',
-            'description_12'=>'',
+            'title_12'=>'Fluid Harbor',
+            'header_12'=>'An Organic Waterfront Structure Inspired by Movement and Nature',
+            'description_12'=>'Fluid Harbor is an organic architectural concept designed to merge seamlessly with water and landscape. Flowing lines, layered platforms, and lightweight structures create a dynamic form that responds to movement, light, and reflection. Ideal for cultural pavilions, waterfront centers, or leisure destinations, Fluid Harbor transforms the shoreline into an interactive architectural experience.',
 
             /* Design 14 **/
-            'title_13'=>'',
-            'header_13'=>'',
-            'description_13'=>'',
+            'title_13'=>'Urban Nest',
+            'header_13'=>'A Contemporary Urban Residence with Strong Architectural Character',
+            'description_13'=>'Urban Nest is a contemporary residential design that balances privacy, solidity, and modern elegance. Defined by clean volumes, dark-toned materials, and vertical glazing, the house presents a bold yet refined presence within its natural surroundings. The layout prioritizes comfort, daylight, and functional living, making it ideal for urban or suburban environments where modern lifestyle meets architectural identity.',
 
             /* Design 15 **/
-            'title_14'=>'',
-            'header_14'=>'',
-            'description_14'=>'',
+            'title_14'=>'Harbor Point',
+            'header_14'=>'A Mixed-Use Waterfront Destination Connecting City and Sea',
+            'description_14'=>'Harbor Point is a contemporary waterfront development designed as a lively intersection of urban life and marine landscape. The project integrates mixed-use buildings, public plazas, and marina facilities into a cohesive coastal environment. Soft building forms, open public spaces, and direct water access create an inviting destination for living, business, and leisure, redefining the relationship between city and shoreline.',
 
             /* Design 16 **/
-            'title_15'=>'',
-            'header_15'=>'',
-            'description_15'=>'',
+            'title_15'=>'Calm Workspace',
+            'header_15'=>'A Refined Office Interior Focused on Comfort and Productivity',
+            'description_15'=>'Calm Workspace is a contemporary office interior concept designed to promote focus, well-being, and professional comfort. Warm natural materials, clean lines, and soft lighting create a balanced environment that supports both collaboration and concentration. The layout encourages openness while maintaining privacy, making it ideal for executive offices, corporate headquarters, and modern workspaces that value human-centered design.',
 
     ];
 

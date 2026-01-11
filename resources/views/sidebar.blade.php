@@ -58,7 +58,7 @@
 
                     <!-- Twitter (X) -->
                     <li>
-                        <a href="https://x.com" data-tooltip="X">
+                        <a href="<?=$x?>" data-tooltip="X">
                             <svg class="styled-svg svg-fill" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -71,7 +71,7 @@
 
                     <!-- Facebook -->
                     <li>
-                        <a href="https://www.facebook.com" data-tooltip="Facebook">
+                        <a href="<?=$facebook?>" data-tooltip="Facebook">
                             <svg class="styled-svg svg-fill" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -84,7 +84,7 @@
 
                     <!-- Instagram -->
                     <li>
-                        <a href="https://www.instagram.com" data-tooltip="Instagram">
+                        <a href="<?=$instagram?>" data-tooltip="Instagram">
                             <svg class="styled-svg svg-fill" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

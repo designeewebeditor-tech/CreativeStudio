@@ -260,19 +260,17 @@ input, select, textarea {
 	}
 
 	code {
-		background: rgb(156, 163, 175);
-		border: solid 1px rgba(156, 163, 175, 0.3);
 		font-family: "Courier New", monospace;
 		font-size: 0.9em;
 		margin: 0 0.25em;
-		padding: 0.25em 0.65em;
+		padding: .1em .15em;
 	}
 
 	pre {
 		-webkit-overflow-scrolling: touch;
 		font-family: "Courier New", monospace;
 		font-size: 0.9em;
-		margin: 0 0 2em 0;
+        white-space: pre-line;
 	}
 
 		pre code {
@@ -1780,8 +1778,7 @@ input, select, textarea {
 	}
 
     .blurb pre{
-        font-size: 1em;
-        white-space: pre-line;
+        margin: 0 0 2em 0;
     }
 
 /* Button */
@@ -2225,18 +2222,13 @@ input, select, textarea {
 			width: 100%;
 		}
 
-        .slide.image {
+        .image.slide{
             flex-shrink: 0;
             width: 100%;
             height: 100%;
         }
 
-            .slide.image img {
-                width: 100%;
-                height: 100%;
-            }
-
-			.image.featured img {
+			.image.featured img, .image.slide img {
 				width: 100%;
 			}
 
@@ -2428,6 +2420,21 @@ input, select, textarea {
 		list-style: none;
 		padding-left: 0;
 	}
+        ul.icons.user-actions{
+            width: 100%;
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+            margin-right: 5em;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 3em;
+        }
+
+        ul.icons.user-actions:hover li span{
+            /* color: var(--accent-cyan); */
+        }
 
 		ul.icons li {
 			display: inline-block;
@@ -2664,6 +2671,7 @@ input, select, textarea {
 			display: -webkit-flex;
 			display: -ms-flex;
 			display: flex;
+            flex-direction: column;
 			-moz-align-items: center;
 			-webkit-align-items: center;
 			-ms-align-items: center;
@@ -2676,6 +2684,48 @@ input, select, textarea {
 				-ms-flex-grow: 1;
 				flex-grow: 1;
 			}
+
+            .post > footer .comments {
+                width: 100%;
+            }
+
+            .post > footer .comment-content {
+                width: 100%;
+                padding: .2em 1em;
+                margin: .3em .3em .8em .3em;
+                border-radius: 12px;
+                background-color: var(--text-second);
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                display: -moz-flex;
+                display: -webkit-flex;
+                display: -ms-flex;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hidden-comments{
+                display: none !important;
+            }
+
+            .post > footer .comment-content pre{
+                color: var(--bg-second);
+            }
+
+            .post > footer .author-name {
+                margin-right: .5em;
+                cursor: pointer;
+                color: var(--bg-main);
+            }
+
+            .post > footer .author-name:hover {
+                color: var(--accent-yellow);
+            }
+
+            .post > footer .time-stamp {
+                color: var(--bg-main);
+                align-self: flex-end;
+            }
 
 		@media screen and (max-width: 980px) {
 
@@ -2926,9 +2976,9 @@ input, select, textarea {
 		}
 
 			#header .main ul {
+                display: flex;
 				height: inherit;
 				line-height: inherit;
-                display: flex;
 			}
 
 				#header .main ul li, #header .main ul button{
@@ -3221,7 +3271,7 @@ input, select, textarea {
 		margin: 0 0 1.5em 0;
     }
 
-	body.single #footer {
+	body.single #footer, body.single #about {
 		text-align: center;
 	}
 

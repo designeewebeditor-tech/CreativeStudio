@@ -1,11 +1,58 @@
-/* Container for the menu item */
+/* SVG Container */
 li.menu {
     list-style: none;
     width: 5em;
+    display: -moz-flex !important;
+    display: -webkit-flex !important;
+    display: -ms-flex !important;
     display: flex !important;
     justify-content: center;
     align-items: center;
 }
+
+.primary-button:hover{
+    background: var(--accent-cyan);
+}
+
+.primary-button svg{
+    width: .8rem;
+    height: .8rem;
+    cursor: pointer;
+    stroke: var(--text-second);
+    fill: var(--text-second);
+}
+
+.primary-button:hover svg{
+    stroke: var(--accent-green);
+    fill: var(--accent-green);
+}
+
+.user-like{
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    /* gap: .1em; */
+    color: var(--text-second);
+    fill: var(--text-second);
+    transition: stroke 0.3s ease, transform 0.2s ease;
+}
+
+.user-like svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--text-second);
+    stroke: var(--text-second);
+}
+
+.user-like:hover code{
+    color: var(--text-second);
+    
+}
+
+
 
 /* The SVG itself */
 
@@ -18,7 +65,7 @@ li.menu {
 
 .styled-svg-menu:hover {
     cursor: pointer;
-    stroke: #3B82F6;
+    stroke: var(--accent-cyan);
 }
 
 .styled-svg {

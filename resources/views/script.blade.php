@@ -20,7 +20,7 @@
     getAboutContextBtn.textContent = "{{__('context.learn')}}";
 
     /* Get email event */
-    const setCopProperty  = async (isPhone) => {
+    const setCopProperty = async (isPhone) => {
         try {
             if (navigator.clipboard && window.isSecureContext) {
                 await navigator.clipboard.writeText(isPhone ? phoneToCopy : emailToCopy);
@@ -35,6 +35,19 @@
             console.error('Failed to read clipboard contents: ', err.message);
         }
     };
+
+    <?php if($show) { ?>
+    /* Show/Hide comments */
+
+    const setComments = (id) => {
+        const comments = body.querySelector(".comments-<?=$id?>").querySelectorAll(".comment-content");
+        const hideComments = comments[0].classList.contains("hidden-comments");
+
+        comments.forEach(comment => {
+            hideComments ? comment.classList.remove("hidden-comments") : comment.classList.add("hidden-comments");
+        });
+    }
+    <?php } ?>
 
     /* About button events */
     getAboutContextBtn && getAboutContextBtn.addEventListener("click", ()=>{

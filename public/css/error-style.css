@@ -7,7 +7,10 @@
         height: 100%;
         min-height: 100vh;
         color: var(--text-main);
-        display: flex;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
         align-items: center;
         justify-content: center;
         line-height: 1.5;
@@ -44,24 +47,6 @@
         color: var(--text-muted);
         font-size: 1.125rem;
         margin-bottom: 2rem;
-    }
-
-    .primary-button:hover{
-        background: var(--accent-cyan);
-        /* color: #111827 !important; */
-    }
-
-    .primary-button svg{
-        width: .8rem;
-        height: .8rem;
-        cursor: pointer;
-        stroke: var(--text-second);
-        fill: var(--text-second);
-    }
-
-    .primary-button:hover svg{
-        stroke: var(--accent-green);
-        fill: var(--accent-green);
     }
 
     @media (max-width: 480px) {

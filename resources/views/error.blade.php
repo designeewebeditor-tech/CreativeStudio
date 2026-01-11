@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset('css/error-module.css') }}">
+<link rel="stylesheet" href="{{ asset('css/error-style.css') }}">
 
 <section class="error-container">
     <main class="error-module">
