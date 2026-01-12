@@ -2298,6 +2298,8 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
+        flex-direction: row;
+        align-self: start;
 		cursor: default;
 		list-style: none;
 		margin-left: -1em;
@@ -2694,7 +2696,7 @@ input, select, textarea {
                 padding: .2em 1em;
                 margin: .3em .3em .8em .3em;
                 border-radius: 12px;
-                background-color: var(--text-second);
+                background-color: var(--accent-yellow);
                 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
                 display: -moz-flex;
                 display: -webkit-flex;
@@ -2702,6 +2704,15 @@ input, select, textarea {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
+            }
+
+            .post > footer .comment-content:hover {
+                border-color: var(--text-main);
+                box-shadow: 0 0 0 1px var(--text-main);
+                -moz-transform: scale(1.005);
+				-webkit-transform: scale(1.005);
+				-ms-transform: scale(1.005);
+				transform: scale(1.005);
             }
 
             .hidden-comments{
@@ -2719,7 +2730,7 @@ input, select, textarea {
             }
 
             .post > footer .author-name:hover {
-                color: var(--accent-yellow);
+                color: var(--accent-cyan);
             }
 
             .post > footer .time-stamp {
