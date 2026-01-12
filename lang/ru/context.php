@@ -26,6 +26,7 @@
         'error_context'=>'К сожалению, мы не смогли найти нужную вам страницу. Возможно, она была перемещена или удалена.',
 
         /* Attributes **/
+        'comments'=>'Комментарии',
         'name'=>'name',
         'username'=>'username',
         'email'=>'email',

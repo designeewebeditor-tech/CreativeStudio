@@ -26,6 +26,7 @@
         'error_context'=>'Bağışlayın, axtardığınız səhifəni tapa bilmədik. Ola bilsin ki, köçürülüb və ya silinib.',
 
         /* Attributes **/
+        'comments'=>'Şərhlər',
         'name'=>'name',
         'username'=>'istifadəçi adı',
         'email'=>'email',
