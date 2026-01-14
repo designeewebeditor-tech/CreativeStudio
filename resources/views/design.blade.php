@@ -4,7 +4,7 @@
             <article class="post">
                 <header>
                     <div class="title">
-                        <h2><a href="#">{{__('designs.title_'.$id)}}</a></h2>
+                        <h2><a>{{__('designs.title_'.$id)}}</a></h2>
                         <p>{{__('designs.header_'.$id)}}</p>
                     </div>
                 </header>

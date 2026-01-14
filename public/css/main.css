@@ -3204,15 +3204,15 @@ input, select, textarea {
 		margin: 0 0 1em 0;
 		overflow: hidden;
 		position: relative;
-		width: 8.5em;
-        height: 4.5em;
+		width: 12.5em;
+        height: 12.5em;
 	}
 
 		#intro .logo img {
 			display: block;
 			margin-left: 0.25em;
-			width: 8.5em;
-            height: 4.5em;
+			width: 12.5em;
+            height: 12.5em;
 		}
 
 	#intro header h2 {

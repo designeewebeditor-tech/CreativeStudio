@@ -3,9 +3,8 @@
 
         <!-- Intro -->
             <section id="intro">
-                <a href="#" class="logo"><img src="{{ asset('images/logo.png') }}" alt="" /></a>
+                <a href="{{route('design.all')}}" class="logo"><img src="{{ asset('images/dark-mode-logo-main-remove-bg.png') }}" alt="" /></a>
                 <header>
-                    <!-- <h2>Logo</h2> -->
                     <p>{{__('context.about_description')}}</p>
                 </header>
             </section>
