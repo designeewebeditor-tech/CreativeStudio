@@ -16,7 +16,7 @@ Route::fallback([MainController::class, 'errorPage'])->name('error.page');
 
 Route::name('user.')->group(function () {
     Route::post('/like/design', [UserActionsController::class, 'userLike'])->name('like');
-    Route::post('/Comment/design', [UserActionsController::class, 'userComment'])->name('comment');
+    Route::post('/comment/design', [UserActionsController::class, 'userComment'])->name('comment');
 });
 
 
