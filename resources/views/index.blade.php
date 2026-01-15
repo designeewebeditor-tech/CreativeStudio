@@ -1,5 +1,6 @@
 <?php
     use Illuminate\Support\Facades\App;
+    use Illuminate\Support\Facades\Session;
 ?>
 <!DOCTYPE html>
 <html lang="<?=App::getLocale()?>">

@@ -27,14 +27,15 @@
 
         /* Attributes **/
         'comments'=>'Şərhlər',
-        'name'=>'name',
-        'username'=>'istifadəçi adı',
-        'email'=>'email',
-        'username_email'=>'istifadəçi adı və ya e-poçt',
+        'comment_value'=>'Dizayn haqqında şərh yazın',
+        'likes'=>'Bəyənmələr',
+        'name'=>'Ad',
+        'username'=>'İstifadəçi adı',
+        'email'=>'Email',
+        'username_email'=>'İstifadəçi adı və ya e-poçt',
         'confirm_email'=>'e-poçtunuzu təsdiqləyin',
-        'password'=>'parol',
-        'confirm_password'=>'parolunuzu təsdiqləyin',
-        'copy_title'=>'copy',
+        'password'=>'Parol',
+        'confirm_password'=>'Parolunuzu təsdiqləyin',
 
         /* Buttons **/
         'learn' =>'Ətraflı məlumat',

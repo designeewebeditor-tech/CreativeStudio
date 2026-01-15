@@ -5,4 +5,5 @@
         <link rel="icon" type="image/png" href="{{ asset('images/dark-mode-logo-remove-bg-small.png') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/svg-style.css') }}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>

@@ -6,6 +6,16 @@
     const getMenuAside = body.querySelector("li.menu");
     const AboutContext = body.querySelector(".blurb > pre");
     const getAboutContextBtn = body.querySelector("a#about-context-btn");
+<?php if($show) { ?>
+    const userLike = document.querySelector('.user-like');
+    const likeCount = userLike.querySelector("code");
+
+    const commentContentNew = document.querySelector('.comment-content-new');
+    const addCommentBtn = document.querySelector('.add-comment-btn');
+    const newCommentInput = document.querySelector('#new-comment');
+    const newUsernameInput = document.querySelector('#new-username');
+<?php } ?>
+
 <?php if($error) { ?>
     const errorContainer = body.querySelector(".error-container");
     const backHomeBtn = errorContainer.querySelector('a#back_home');
@@ -18,6 +28,10 @@
     const emailToCopy = "<?=$email?>";
     const phoneToCopy = "<?=$phone?>"
     getAboutContextBtn.textContent = "{{__('context.learn')}}";
+<?php if($show) { ?>
+    let postComment = false;
+    let addUserLike = <?php if(session()->has('username') && in_array(session()->get('username'), $data["likes"])){ ?> false <?php }else{ ?> true <?php } ?>;
+<?php } ?>
 
     /* Get email event */
     const setCopProperty = async (isPhone) => {
@@ -38,15 +52,93 @@
 
     <?php if($show) { ?>
     /* Show/Hide comments */
-
     const setComments = (id) => {
-        const comments = body.querySelector(".comments-<?=$id?>").querySelectorAll(".comment-content");
+        const comments = body.querySelector(".comments-<?=$id?>").querySelectorAll(".set-comment-content");
         const hideComments = comments[0].classList.contains("hidden-comments");
 
         comments.forEach(comment => {
             hideComments ? comment.classList.remove("hidden-comments") : comment.classList.add("hidden-comments");
         });
     }
+
+    /* Permission for new comment */
+    const commentInputListener = ()=> {
+        if(newCommentInput.value == "" || newUsernameInput.value == ""){
+            addCommentBtn.classList.remove("add-svg");
+            postComment = false;
+        }else{
+            addCommentBtn.classList.add("add-svg");
+            postComment = true;
+        }
+    };
+
+    /* Add a new coment */
+    const addComment = async (desingId) => {
+        if(postComment){
+            fetch("{{ route('user.comment') }}", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: desingId,
+                    username: newUsernameInput.value,
+                    comment: newCommentInput.value,
+                    lang: "<?=session()->get('lang')?>",
+                    date: "<?=date('d-m-y')?>",
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                    console.log(data)
+                    const newComment = document.createElement('div');
+                    newComment.classList.add("comment-content");
+                    newComment.classList.add("set-comment-content");
+
+                    const newCommentContext = document.createElement('pre');
+                    newCommentContext.innerHTML = `<strong class="author-name">${newUsernameInput.value}</strong>${newCommentInput.value}`;
+                    newComment.appendChild(newCommentContext);
+
+                    const newTimeStamp = document.createElement('h4');
+                    newTimeStamp.classList.add("time-stamp");
+                    newTimeStamp.textContent = '<?=date('d-m-y')?>'
+                    newComment.appendChild(newTimeStamp);
+
+                    commentContentNew.after(newComment);
+                    newCommentInput.value = "";
+                }
+            )
+            .catch(err => console.error(err));
+        }
+    };
+
+    /* Add a new like */
+    const addLike = async (desingId) => {
+        fetch("{{ route('user.like') }}", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                id: desingId,
+                username: newUsernameInput.value,
+                comment: newCommentInput.value,
+                add: addUserLike
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+                console.log(data)
+                userLike.classList.contains("clicked") ? userLike.classList.remove("clicked") : userLike.classList.add("clicked");
+                likeCount.textContent = (userLike.classList.contains("clicked") ? parseInt(likeCount.textContent)+1 : parseInt(likeCount.textContent)-1).toString();
+            }
+        )
+        .catch(err => console.error(err));
+    };
     <?php } ?>
 
     /* About button events */

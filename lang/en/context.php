@@ -27,14 +27,15 @@
 
         /* Attributes **/
         'comments'=>'Comments',
-        'name'=>'name',
-        'username'=>'username',
-        'email'=>'email',
-        'username_email'=>'username or email',
-        'confirm_email'=>'confirm your email',
-        'password'=>'password',
-        'confirm_password'=>'confirm your password',
-        'copy_title'=>'copy',
+        'comment_value'=>'Leave a comment about the design',
+        'likes'=>'Likes',
+        'name'=>'Name',
+        'username'=>'Username',
+        'email'=>'Email',
+        'username_email'=>'Username or email',
+        'confirm_email'=>'Confirm your email',
+        'password'=>'Password',
+        'confirm_password'=>'Confirm your password',
 
         /* Buttons **/
         'learn' =>'Learn More',

@@ -27,14 +27,15 @@
 
         /* Attributes **/
         'comments'=>'Комментарии',
-        'name'=>'name',
-        'username'=>'username',
-        'email'=>'email',
-        'username_email'=>'username or email',
-        'confirm_email'=>'confirm your email',
-        'password'=>'password',
-        'confirm_password'=>'confirm your password',
-        'copy_title'=>'copy',
+        'comment_value'=>'Оставьте комментарий о дизайне.',
+        'likes'=>'Лайки',
+        'name'=> 'Имя',
+        'username'=> 'Имя пользователя',
+        'email'=> 'Электронная почта',
+        'username_email'=> 'имя пользователя или адрес электронной почты',
+        'confirm_email'=> 'Подтвердите свой адрес электронной почты',
+        'password'=> 'Пароль',
+        'confirm_password'=> 'Подтвердите свой пароль',
 
         /* Buttons **/
         'learn' => 'Узнать больше',

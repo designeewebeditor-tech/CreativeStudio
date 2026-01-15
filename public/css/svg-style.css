@@ -10,21 +10,12 @@ li.menu {
     align-items: center;
 }
 
-.primary-button:hover{
-    background: var(--accent-cyan);
-}
-
 .primary-button svg{
     width: .8rem;
     height: .8rem;
     cursor: pointer;
     stroke: var(--text-second);
     fill: var(--text-second);
-}
-
-.primary-button:hover svg{
-    stroke: var(--accent-green);
-    fill: var(--accent-green);
 }
 
 .user-like{
@@ -34,7 +25,7 @@ li.menu {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    /* gap: .1em; */
+    cursor: pointer;
     color: var(--text-second);
     fill: var(--text-second);
     transition: stroke 0.3s ease, transform 0.2s ease;
@@ -43,13 +34,27 @@ li.menu {
 .user-like svg {
     width: 1.5rem;
     height: 1.5rem;
+    cursor: pointer;
     fill: var(--text-second);
     stroke: var(--text-second);
 }
 
-.user-like:hover code{
-    color: var(--text-second);
+.user-like:hover svg {
+    fill: var(--accent-cyan);
+    stroke: var(--accent-cyan);
+}
 
+.user-like:hover code{
+    color: var(--accent-cyan);
+}
+
+.user-like.clicked svg, .user-like.clicked:hover svg {
+    fill: var(--accent-green);
+    stroke: var(--accent-green);
+}
+
+.user-like.clicked code, .user-like.clicked:hover code{
+    color: var(--accent-green);
 }
 
 /* The SVG itself */
@@ -61,16 +66,24 @@ li.menu {
     stroke: var(--text-second);
 }
 
-.styled-svg-menu:hover {
-    cursor: pointer;
-    stroke: var(--accent-cyan);
-}
-
 .styled-svg {
     width: 1.5rem;
     height: 1.5rem;
     cursor: pointer;
     stroke: var(--text-second);
+}
+
+.add-comment-btn{
+    width: 3rem;
+    height: 3rem;
+    justify-self: end;
+    stroke: var(--text-second);
+    fill: var(--text-second);
+}
+
+.add-svg {
+    cursor: pointer;
+    transition: stroke 0.3s ease, transform 0.2s ease;
 }
 
 
@@ -88,7 +101,27 @@ li.menu {
 
 .svg-fill:hover {
     fill: var(--accent-cyan);
-    transition: fill var(--transition-speed) ease;
+    transition: fill 0.3s ease;
+}
+
+.add-svg:hover {
+    stroke: var(--accent-green);
+    fill: var(--accent-green);
+    transition: fill 0.3s ease;
+}
+
+.primary-button:hover{
+    background: var(--accent-cyan);
+}
+
+.primary-button:hover svg{
+    stroke: var(--accent-green);
+    fill: var(--accent-green);
+}
+
+.styled-svg-menu:hover {
+    cursor: pointer;
+    stroke: var(--accent-cyan);
 }
 
 /* Data tooltip content (hidden by default) */
