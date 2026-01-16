@@ -30,7 +30,11 @@
     getAboutContextBtn.textContent = "{{__('context.learn')}}";
 <?php if($show) { ?>
     let postComment = false;
-    let addUserLike = <?php if(session()->has('username') && in_array(session()->get('username'), $data["likes"])){ ?> false <?php }else{ ?> true <?php } ?>;
+    let addUserLike = <?php if(in_array(__('designs.title_'.$id), session()->get('user.likes'))){ ?> false <?php }else{ ?> true <?php } ?>;
+
+    <?php if(in_array(__('designs.title_'.$id), session()->get('user.likes'))){ ?>
+        likeCount.textContent = parseInt(likeCount.textContent)+1
+    <?php } ?>
 <?php } ?>
 
     /* Get email event */
@@ -51,9 +55,10 @@
     };
 
     <?php if($show) { ?>
+
     /* Show/Hide comments */
     const setComments = (id) => {
-        const comments = body.querySelector(".comments-<?=$id?>").querySelectorAll(".set-comment-content");
+        const comments = body.querySelector("#comments-<?=$id?>").querySelectorAll(".set-comment-content");
         const hideComments = comments[0].classList.contains("hidden-comments");
 
         comments.forEach(comment => {
@@ -73,7 +78,7 @@
     };
 
     /* Add a new coment */
-    const addComment = async (desingId) => {
+    const addComment = async () => {
         if(postComment){
             fetch("{{ route('user.comment') }}", {
                 method: 'POST',
@@ -83,11 +88,10 @@
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    id: desingId,
+                    design: "{{ __('designs.title_'.$id) }}",
                     username: newUsernameInput.value,
                     comment: newCommentInput.value,
                     lang: "<?=session()->get('lang')?>",
-                    date: "<?=date('d-m-y')?>",
                 })
             })
             .then(res => res.json())
@@ -103,7 +107,7 @@
 
                     const newTimeStamp = document.createElement('h4');
                     newTimeStamp.classList.add("time-stamp");
-                    newTimeStamp.textContent = '<?=date('d-m-y')?>'
+                    newTimeStamp.textContent = '<?=date('d-m-Y')?>'
                     newComment.appendChild(newTimeStamp);
 
                     commentContentNew.after(newComment);
@@ -115,7 +119,7 @@
     };
 
     /* Add a new like */
-    const addLike = async (desingId) => {
+    const addLike = async () => {
         fetch("{{ route('user.like') }}", {
             method: 'POST',
             headers: {
@@ -124,9 +128,8 @@
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                id: desingId,
+                design: "{{ __('designs.title_'.$id) }}",
                 username: newUsernameInput.value,
-                comment: newCommentInput.value,
                 add: addUserLike
             })
         })

@@ -38,7 +38,7 @@
                     <!-- Post Actions -->
                     <ul class="icons user-actions">
                         <li data-tooltip="{{__('context.likes')}}">
-                            <a class="user-like <?php if(session()->has('username') && in_array(session()->get('username'), $data["likes"])){ ?> clicked <?php } ?>" onclick="addLike(<?=$id?>)">
+                            <a class="user-like <?php if(in_array(__('designs.title_'.$id), session()->get('user.likes'))){ ?> clicked <?php } ?>" onclick="addLike()">
                                 <code><?=count($data["likes"])?></code>
                                 <svg viewBox="0 0 32 32" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.019,12c0,-0.552 -0.447,-1 -1,-1l-5,0c-0.552,0 -1,0.448 -1,1l0,15c0,0.552 0.448,1 1,1l5,-0c0.553,0 1,-0.448 1,-1l0,-15Z"></path><path d="M16.948,5.936l-3.841,7.614c-0.07,0.139 -0.107,0.294 -0.107,0.45l0,11c0,0.266 0.106,0.521 0.295,0.709l2.009,2c0.188,0.186 0.441,0.291 0.706,0.291l6.351,-0c1.43,-0 2.661,-1.009 2.941,-2.411l2.204,-11.01c0.177,-0.882 -0.052,-1.797 -0.622,-2.492c-0.571,-0.695 -1.423,-1.098 -2.322,-1.097l-2.962,0.003l1.021,-3.105c0.504,-1.533 -0.331,-3.185 -1.864,-3.689c-0.049,-0.016 -0.098,-0.032 -0.147,-0.049c-1.507,-0.495 -3.129,0.303 -3.662,1.786Zm-0,0l-0.001,0.004l0.001,-0.004l-0,0Z"></path></g></svg>
                             </a>
@@ -49,12 +49,12 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="comments comments-<?=$id?>">
+                    <div class="comments" id="comments-<?=$id?>">
                         <div class="comment-content-new set-comment-content hidden-comments">
                             <label>
                                 <input id="new-username" oninput="commentInputListener()" placeholder="{{__('context.username')}}" value="{{session()->get('username')}}" type="text">
                                 <input id="new-comment" oninput="commentInputListener()" placeholder="{{__('context.comment_value')}}" type="text">
-                                <svg class="add-comment-btn" onclick="addComment(<?=$id?>)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="add-comment-btn" onclick="addComment()" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                     <g id="SVGRepo_iconCarrier">
@@ -63,6 +63,12 @@
                                 </svg>
                             </label>
                         </div>
+                        @foreach(array_reverse(session()->get('user.comments')[__('designs.title_'.$id)]) as $comment)
+                        <div class="comment-content set-comment-content hidden-comments">
+                                <pre><strong class="author-name"><?=$comment["username"]?></strong><?=$comment["comment"]?></pre>
+                                <h4 class="time-stamp"><?=$comment["date"]?></h4>
+                        </div>
+                        @endforeach
                         @foreach(array_reverse($data["comments"]) as $comment)
                         <div class="comment-content set-comment-content hidden-comments">
                                 <pre><strong class="author-name"><?=$comment["username"]?></strong><?=$comment["comment"]?></pre>

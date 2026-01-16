@@ -52,6 +52,8 @@ class MainController extends Controller
 
         !session()->has('lang') ? session()->put('lang', $this->lang[0]) : null;
         !session()->has('username') ? session()->put('username', 'user_'.Str::uuid()) : null;
+        !session()->has('user.likes') ? session()->put('user.likes', []) : null;
+        !session()->has('user.comments') ? session()->put('user.comments', []) : null;
 
         App::setLocale(session('lang'));
         return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->companyTitle, "x" => $this->xUrl, "facebook" => $this->facebookUrl, "instagram" => $this->instagramUrl, "phone"=>$this->companyPhone, "email" => $this->companyEamil, "id" => $id, "image" =>$imageCount, "data" => $data["designs"][$id],]);
@@ -69,6 +71,11 @@ class MainController extends Controller
     {
         $imageCount = count(File::glob(public_path("images/designs/design_{$id}_*.png")));
         $data = json_decode(File::get(resource_path('json/actives.json')), true);
+
+        !session()->has('lang') ? session()->put('lang', $this->lang[0]) : null;
+        !session()->has('username') ? session()->put('username', 'user_'.Str::uuid()) : null;
+        !session()->has('user.likes') ? session()->put('user.likes', []) : null;
+        !session()->has('user.comments') ? session()->put('user.comments', []) : null;
 
         session()->put('lang', $request->lang);
         App::setLocale(session('lang'));

@@ -9,60 +9,62 @@ class UserActionsController extends Controller
 {
     public function userLike(Request $request)
     {
-        $path = resource_path('json/actives.json');
-        $data = json_decode(File::get($path), true);
+        !session()->has('user.likes') ? session()->put('user.likes', []) : null;
+        $likes = session()->get('user.likes');
 
-        $designId = $request->id;
-        if (!isset($data["designs"][$designId])) {
-            return response()->json(['message' => 'Design not found'], 404);
+        if($request->add){
+            array_push($likes, $request->design);
+        }else if (($like_key = array_search($request->design, $likes)) !== false) {
+            unset($likes[$like_key]);
         }
 
-        session()->put('username', $request->username);
+        session()->put('user.likes', $likes);
 
-        $likes = &$data["designs"][$designId]["likes"];
+        // $path = resource_path('json/actives.json');
+        // $data = json_decode(File::get($path), true);
 
-        if ($request->add) {
-            if (!in_array($request->username, $likes)) {
-                array_push($likes, $request->username);
-            }
-        } else {
-            if (($remove_key = array_search($request->username, $likes)) !== false) {
-                unset($likes[$remove_key]);
-                $data["designs"][$designId]["likes"] = array_values($likes);
-            }
-        }
+        // $designId = $request->id;
+        // if (!isset($data["designs"][$designId])) {
+        //     return response()->json(['message' => 'Design not found'], 404);
+        // }
 
-        File::put($path, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+        // session()->put('username', $request->username);
 
-        return response()->json([
-            'status' => 'success',
-            'like_count' => count($data["designs"][$designId]["likes"])
-        ]);
+        // $likes = &$data["designs"][$designId]["likes"];
+
+        // if ($request->add) {
+        //     if (!in_array($request->username, $likes)) {
+        //         array_push($likes, $request->username);
+        //     }
+        // } else {
+        //     if (($remove_key = array_search($request->username, $likes)) !== false) {
+        //         unset($likes[$remove_key]);
+        //         $data["designs"][$designId]["likes"] = array_values($likes);
+        //     }
+        // }
+
+        // File::put($path, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+
+        return response()->json(['status' => 'success',]);
     }
 
     public function userComment(Request $request)
     {
-        $path = resource_path('json/actives.json');
-        $data = json_decode(File::get($path), true);
+        !session()->has('user.comments') ? session()->put('user.comments', []) : null;
 
-        session()->put('username', $request->username);
+        $comments = session()->get('user.comments');
 
-        if(isset($data["designs"][$request->id])) {
-            array_push($data["designs"][$request->id]["comments"], [
-                "lang"     => $request->lang,
-                "username" => $request->username,
-                "comment"  => $request->comment,
-                "date"     => $request->date
-            ]);
+        !isset($comments[$request->design]) ? $comments[$request->design] = [] : null;
 
-            File::put($path, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+        array_push($comments[$request->design], [
+            "lang"     => $request->lang,
+            "username" => $request->username,
+            "comment"  => $request->comment,
+            "date"     => date('d-m-Y'),
+        ]);
 
-            return response()->json([
-                'status' => 'success',
-                'message' => 'Comment added successfully'
-            ]);
-        }
+        session()->put('user.comments', $comments);
 
-        return response()->json(['status' => 'error', 'message' => 'Design not found'], 404);
+        return response()->json(['status' => 'success',]);
     }
 }
