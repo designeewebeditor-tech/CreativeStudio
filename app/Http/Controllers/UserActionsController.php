@@ -12,6 +12,8 @@ class UserActionsController extends Controller
         !session()->has('user.likes') ? session()->put('user.likes', []) : null;
         $likes = session()->get('user.likes');
 
+        session()->put('username', $request->username);
+
         if($request->add){
             array_push($likes, $request->design);
         }else if (($like_key = array_search($request->design, $likes)) !== false) {
@@ -51,8 +53,9 @@ class UserActionsController extends Controller
     public function userComment(Request $request)
     {
         !session()->has('user.comments') ? session()->put('user.comments', []) : null;
-
         $comments = session()->get('user.comments');
+
+        session()->put('username', $request->username);
 
         !isset($comments[$request->design]) ? $comments[$request->design] = [] : null;
 

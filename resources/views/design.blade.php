@@ -63,12 +63,14 @@
                                 </svg>
                             </label>
                         </div>
-                        @foreach(array_reverse(session()->get('user.comments')[__('designs.title_'.$id)]) as $comment)
-                        <div class="comment-content set-comment-content hidden-comments">
-                                <pre><strong class="author-name"><?=$comment["username"]?></strong><?=$comment["comment"]?></pre>
-                                <h4 class="time-stamp"><?=$comment["date"]?></h4>
-                        </div>
-                        @endforeach
+                        @if(!empty(session()->get('user.comments')[__('designs.title_'.$id)]))
+                            @foreach(array_reverse(session()->get('user.comments')[__('designs.title_'.$id)]) as $comment)
+                            <div class="comment-content set-comment-content hidden-comments">
+                                    <pre><strong class="author-name"><?=$comment["username"]?></strong><?=$comment["comment"]?></pre>
+                                    <h4 class="time-stamp"><?=$comment["date"]?></h4>
+                            </div>
+                            @endforeach
+                        @endif
                         @foreach(array_reverse($data["comments"]) as $comment)
                         <div class="comment-content set-comment-content hidden-comments">
                                 <pre><strong class="author-name"><?=$comment["username"]?></strong><?=$comment["comment"]?></pre>
