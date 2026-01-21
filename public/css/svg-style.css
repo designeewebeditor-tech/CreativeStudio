@@ -1,0 +1,152 @@
+/* SVG Container */
+li.menu {
+    list-style: none;
+    width: 5em;
+    display: -moz-flex !important;
+    display: -webkit-flex !important;
+    display: -ms-flex !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary-button svg{
+    width: .8rem;
+    height: .8rem;
+    cursor: pointer;
+    stroke: var(--text-second);
+    fill: var(--text-second);
+}
+
+.user-like{
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    cursor: pointer;
+    color: var(--text-second);
+    fill: var(--text-second);
+    transition: stroke 0.3s ease, transform 0.2s ease;
+}
+
+.user-like svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    fill: var(--text-second);
+    stroke: var(--text-second);
+}
+
+.user-like:hover svg {
+    fill: var(--accent-cyan);
+    stroke: var(--accent-cyan);
+}
+
+.user-like:hover code{
+    color: var(--accent-cyan);
+}
+
+.user-like.clicked svg, .user-like.clicked:hover svg {
+    fill: var(--accent-green);
+    stroke: var(--accent-green);
+}
+
+.user-like.clicked code, .user-like.clicked:hover code{
+    color: var(--accent-green);
+}
+
+/* The SVG itself */
+
+.styled-svg-menu {
+    width: 1.7rem;
+    height: 1.7rem;
+    cursor: pointer;
+    stroke: var(--text-second);
+}
+
+.styled-svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    stroke: var(--text-second);
+}
+
+.add-comment-btn{
+    width: 3rem;
+    height: 3rem;
+    justify-self: end;
+    stroke: var(--text-second);
+    fill: var(--text-second);
+}
+
+.add-svg {
+    cursor: pointer;
+    transition: stroke 0.3s ease, transform 0.2s ease;
+}
+
+
+/* Hover Effect */
+.styled-svg:hover {
+    cursor: pointer;
+    stroke: var(--accent-cyan);
+    transform: scale(1.05);
+}
+
+.svg-fill {
+    fill: var(--text-second);
+    transition: stroke 0.3s ease, transform 0.2s ease;
+}
+
+.svg-fill:hover {
+    fill: var(--accent-cyan);
+    transition: fill 0.3s ease;
+}
+
+.add-svg:hover {
+    stroke: var(--accent-green);
+    fill: var(--accent-green);
+    transition: fill 0.3s ease;
+}
+
+.primary-button:hover{
+    background: var(--accent-cyan);
+}
+
+.primary-button:hover svg{
+    stroke: var(--accent-green);
+    fill: var(--accent-green);
+}
+
+.styled-svg-menu:hover {
+    cursor: pointer;
+    stroke: var(--accent-cyan);
+}
+
+/* Data tooltip content (hidden by default) */
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translateX(-50%);
+  display: none;
+  padding: .2em .5em;
+  font-family: "Raleway", Helvetica, sans-serif;
+  background-color: var(--bg-second);
+  color: var(--text-main);
+  font-size: 1rem;
+  border-radius: .3rem;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+[data-tooltip]:hover::after {
+  display: block;
+}
