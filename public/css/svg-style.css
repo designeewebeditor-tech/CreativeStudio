@@ -73,6 +73,13 @@ li.menu {
     stroke: var(--text-second);
 }
 
+.small-svg-icon{
+    width: 1.2em;
+    height: 1.2em;
+    stroke: var(--text-second);
+    fill: var(--text-second);
+}
+
 .add-comment-btn{
     width: 3rem;
     height: 3rem;

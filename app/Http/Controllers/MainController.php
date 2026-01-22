@@ -28,10 +28,6 @@ class MainController extends Controller
      */
     private $companyPhone = "+994503661615";
     /**
-     * Company Address
-     */
-    private $companyAddress = "";
-    /**
      * Context Languages
      */
     private $lang = ['en', 'ru', 'az'];
@@ -50,7 +46,7 @@ class MainController extends Controller
     {
         !session()->has('lang') ? session()->put('lang', $this->lang[0]) : null;
         App::setLocale(session('lang'));
-        return view('index', ["show" => false, "error" => false, "length" => $this->length, "title" => $this->companyTitle, "tax_number" => $this->companyTaxNumber, "x" => $this->xUrl, "facebook" => $this->facebookUrl, "instagram" => $this->instagramUrl, "phone" => $this->companyPhone, "email" => $this->companyEamil, "address" => $this->companyAddress,]);
+        return view('index', ["show" => false, "error" => false, "length" => $this->length, "title" => $this->companyTitle, "tax_number" => $this->companyTaxNumber, "x" => $this->xUrl, "facebook" => $this->facebookUrl, "instagram" => $this->instagramUrl, "phone" => $this->companyPhone, "email" => $this->companyEamil,]);
     }
 
     public function design(int $id) : View
@@ -64,7 +60,7 @@ class MainController extends Controller
         !session()->has('user.comments') ? session()->put('user.comments', []) : null;
 
         App::setLocale(session('lang'));
-        return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->companyTitle, "tax_number" => $this->companyTaxNumber, "x" => $this->xUrl, "facebook" => $this->facebookUrl, "instagram" => $this->instagramUrl, "phone"=>$this->companyPhone, "email" => $this->companyEamil, "address" => $this->companyAddress, "id" => $id, "image" =>$imageCount, "data" => $data["designs"][$id],]);
+        return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->companyTitle, "tax_number" => $this->companyTaxNumber, "x" => $this->xUrl, "facebook" => $this->facebookUrl, "instagram" => $this->instagramUrl, "phone"=>$this->companyPhone, "email" => $this->companyEamil, "id" => $id, "image" =>$imageCount, "data" => $data["designs"][$id],]);
     }
 
 
@@ -72,7 +68,7 @@ class MainController extends Controller
     {
         session()->put('lang', $request->lang);
         App::setLocale(session('lang'));
-        return view('index', ["show" => false, "error" => false, "length" => $this->length, "title" => $this->companyTitle, "tax_number" => $this->companyTaxNumber, "x" => $this->xUrl, "facebook" => $this->facebookUrl, "instagram" => $this->instagramUrl, "phone"=>$this->companyPhone, "email" => $this->companyEamil, "address" => $this->companyAddress,]);
+        return view('index', ["show" => false, "error" => false, "length" => $this->length, "title" => $this->companyTitle, "tax_number" => $this->companyTaxNumber, "x" => $this->xUrl, "facebook" => $this->facebookUrl, "instagram" => $this->instagramUrl, "phone"=>$this->companyPhone, "email" => $this->companyEamil,]);
     }
 
     public function designLang(int $id, Request $request) : View
@@ -87,13 +83,13 @@ class MainController extends Controller
 
         session()->put('lang', $request->lang);
         App::setLocale(session('lang'));
-        return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->companyTitle, "tax_number" => $this->companyTaxNumber, "x" => $this->xUrl, "facebook" => $this->facebookUrl, "instagram" => $this->instagramUrl, "phone"=>$this->companyPhone, "email" => $this->companyEamil, "address" => $this->companyAddress, "id" => $id, "image" =>$imageCount, "data" => $data["designs"][$id],]);
+        return view('index', ["show" => true, "error" => false, "length" => $this->length, "title" => $this->companyTitle, "tax_number" => $this->companyTaxNumber, "x" => $this->xUrl, "facebook" => $this->facebookUrl, "instagram" => $this->instagramUrl, "phone"=>$this->companyPhone, "email" => $this->companyEamil, "id" => $id, "image" =>$imageCount, "data" => $data["designs"][$id],]);
     }
 
     public function errorPage(): View
     {
         !session()->has('lang') ? session()->put('lang', $this->lang[0]) : null;
         App::setLocale(session('lang'));
-        return view('index', ["show" => false, "error" => true, "length" => $this->length, "title" => $this->companyTitle, "tax_number" => $this->companyTaxNumber, "x" => $this->xUrl, "facebook" => $this->facebookUrl, "instagram" => $this->instagramUrl, "phone"=>$this->companyPhone, "email" => $this->companyEamil, "address" => $this->companyAddress,]);
+        return view('index', ["show" => false, "error" => true, "length" => $this->length, "title" => $this->companyTitle, "tax_number" => $this->companyTaxNumber, "x" => $this->xUrl, "facebook" => $this->facebookUrl, "instagram" => $this->instagramUrl, "phone"=>$this->companyPhone, "email" => $this->companyEamil,]);
     }
 }

@@ -20,9 +20,12 @@
         We believe architecture should do more than exist — it should inspire, connect, and define the future.',
 
         'about_description'=>'A global design studio specialising in futuristic architecture, urban concepts, and landmark developments. We create visionary designs that combine innovation, sustainability, and strong visual identity.',
-        'about_info'=>'TIN: :tax_number
-        Phone: :phone
-        Address: :address',
+        'tax_info'=>'TIN: :tax_number',
+        'phone_info'=>'Phone: :phone_number',
+        'address_info'=>'Address: :address',
+
+        /* Company address **/
+        'adddress'=>'',
 
         /* Error page **/
         'error_head'=>'Page not found.',

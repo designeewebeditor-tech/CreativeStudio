@@ -20,9 +20,13 @@
         Biz inanırıq ki, memarlıq sadəcə mövcud olmamalıdır — o, ilham verməli, əlaqə yaratmalı və gələcəyi müəyyən etməlidir.',
 
         'about_description'=>'Futuristik memarlıq, şəhərsalma konseptləri və simvolik layihələr üzrə ixtisaslaşmış qlobal dizayn studiyası. İnnovasiya, davamlılıq və güclü vizual kimliyi birləşdirən konseptlər yaradırıq.',
-        'about_info'=>'VÖEN: :tax_number
-        Telefon: :phone
-        Ünvan: :address',
+
+        'tax_info'=>'VÖEN: :tax_number',
+        'phone_info'=>'Telefon: :phone_number',
+        'address_info'=>'Ünvan: :address',
+
+        /* Company address **/
+        'adddress'=>'',
 
         /* Error page **/
         'error_head'=>'Səhifə tapılmadı.',
