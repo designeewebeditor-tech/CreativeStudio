@@ -1,5 +1,5 @@
     <header id="header">
-        <h1><a href="{{ route('design.all') }}" >Creative Studio</a></h1>
+        <h1><a href="{{ route('design.all') }}" ><?=$title?></a></h1>
         <nav class="links">
             <ul>
                 <li><a href="<?= $show ? route('design.all') : null ?>#intro">{{__('context.home')}}</a></li>
@@ -26,7 +26,7 @@
                 @endif
 
                 <li class="menu">
-                    <svg
+                    <!-- <svg
                         class="styled-svg-menu"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -38,6 +38,13 @@
                             stroke-linecap="round"
                             stroke-linejoin="round"
                         />
+                    </svg> -->
+                    <svg class="styled-svg-menu" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6H20M4 12H20M4 18H20"></path> 
+                        </g>
                     </svg>
                 </li>
             </ul>

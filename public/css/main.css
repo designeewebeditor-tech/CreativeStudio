@@ -2836,10 +2836,6 @@ input, select, textarea {
 				-webkit-align-items: -webkit-stretch;
 				-ms-align-items: -ms-stretch;
 				align-items: stretch;
-				-moz-flex-direction: column-reverse;
-				-webkit-flex-direction: column-reverse;
-				-ms-flex-direction: column-reverse;
-				flex-direction: column-reverse;
 			}
 
 		}
@@ -3126,10 +3122,15 @@ input, select, textarea {
 
 				#header h1 {
 					padding: 0 0 0 1em;
+					letter-spacing: 0.10em; 
 				}
 
 				#header .main .search {
 					display: none;
+				}
+
+				#header .main button{
+					padding: 0 1em;
 				}
 
 		}
