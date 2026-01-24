@@ -23,10 +23,7 @@
 
         'tax_info'=>'ИНН: :tax_number',
         'phone_info'=>'Телефон: :phone_number',
-        'address_info'=>'Адрес: :address',
-
-        /* Company address **/
-        'adddress'=>'',
+        'address_info'=>'Адрес: ',
 
         /* Error page **/
         'error_head'=>'Страница не найдена.',

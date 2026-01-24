@@ -22,10 +22,7 @@
         'about_description'=>'A global design studio specialising in futuristic architecture, urban concepts, and landmark developments. We create visionary designs that combine innovation, sustainability, and strong visual identity.',
         'tax_info'=>'TIN: :tax_number',
         'phone_info'=>'Phone: :phone_number',
-        'address_info'=>'Address: :address',
-
-        /* Company address **/
-        'adddress'=>'',
+        'address_info'=>'Address: ',
 
         /* Error page **/
         'error_head'=>'Page not found.',

@@ -23,10 +23,7 @@
 
         'tax_info'=>'VÖEN: :tax_number',
         'phone_info'=>'Telefon: :phone_number',
-        'address_info'=>'Ünvan: :address',
-
-        /* Company address **/
-        'adddress'=>'',
+        'address_info'=>'Ünvan: ',
 
         /* Error page **/
         'error_head'=>'Səhifə tapılmadı.',
